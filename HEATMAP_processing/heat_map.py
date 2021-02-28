@@ -32,6 +32,23 @@ def preprocessUserLocation(df):
     df.user_location = df.user_location.str.replace("中国","China", case=False)
     df.user_location = df.user_location.str.replace("ישראל","Israel", case=False)
     df.user_location = df.user_location.str.replace("آزاد کشمیر","Free Kashmir", case=False)
+    df.user_location = df.user_location.str.replace("الإمارات العربية المتحدة","United Arab Emirates",case=False)
+    df.user_locaiton = df.user_location.str.replace("مصر","Egypt",case=False)
+    df.user_location = df.user_location.str.replace("日本","Japan", case=False)
+    df.user_location = df.user_location.str.replace("Россия","Russia", case=False)
+    df.user_location = df.user_location.str.replace("تونس","Tunisia",case=False)
+    df.user_location = df.user_location.str.replace("علی پور چٹھہ، الباکستان", "Pakistan",case=False)
+    df.user_location = df.user_location.str.replace("عمان", "Amman", case=False)
+    df.user_location = df.user_location.str.replace("قطر", "Qatar", case = False)
+    df.user_location = df.user_location.str.replace("لبنان", "Lebanon", case = False)
+    df.user_location = df.user_location.str.replace("ኢትዮጵያ", "Ethiopia", case = False)
+    df.user_location = df.user_location.str.replace("नेपाल", "Nepal",case=False)
+    df.user_location = df.user_location.str.replace("বাংলাদেশ", "Bangladesh", case=False)
+    df.user_location = df.user_location.str.replace("ประเทศไทย", "Thailand", case = False)
+    df.user_location = df.user_location.str.replace( "ព្រះរាជាណាចក្រ​កម្ពុជា",   "Cambodia", case=False)
+    df.user_location = df.user_location.str.replace("대한민국" , "South Korea", case = False)
+    df.user_location = df.user_location.str.replace("臺灣", "China",case = False)       
+    
     df.dropna(axis=0, how="any", inplace=True)
     return df
 def replaceUserLocationWithISO3(df, world):
