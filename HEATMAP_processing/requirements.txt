@@ -1,0 +1,42 @@
+attrs @ file:///home/conda/feedstock_root/build_artifacts/attrs_1605083924122/work
+certifi==2020.12.5
+chardet==4.0.0
+click==7.1.2
+click-plugins==1.1.1
+cligj @ file:///home/conda/feedstock_root/build_artifacts/cligj_1605902088619/work
+cycler==0.10.0
+decorator==4.4.2
+descartes==1.1.0
+Fiona==1.8.18
+future==0.18.2
+GDAL==3.1.4
+geocoder==1.38.1
+geopandas @ file:///home/conda/feedstock_root/build_artifacts/geopandas_1611609867122/work
+idna==2.10
+imageio==2.9.0
+joblib @ file:///home/conda/feedstock_root/build_artifacts/joblib_1612898609989/work
+kiwisolver @ file:///Users/runner/miniforge3/conda-bld/kiwisolver_1610099793141/work
+mapclassify @ file:///home/conda/feedstock_root/build_artifacts/mapclassify_1608686039411/work
+matplotlib @ file:///Users/runner/miniforge3/conda-bld/matplotlib-suite_1611858891119/work
+munch==2.5.0
+networkx @ file:///home/conda/feedstock_root/build_artifacts/networkx_1598210780226/work
+nltk==3.4.4
+numpy @ file:///Users/runner/miniforge3/conda-bld/numpy_1612953032265/work
+olefile @ file:///home/conda/feedstock_root/build_artifacts/olefile_1602866521163/work
+pandas==1.0.1
+Pillow @ file:///Users/runner/miniforge3/conda-bld/pillow_1612816988466/work
+pycountry==20.7.3
+pyparsing==2.4.7
+pyproj @ file:///Users/runner/miniforge3/conda-bld/pyproj_1604702478551/work
+python-dateutil==2.8.1
+pytz @ file:///home/conda/feedstock_root/build_artifacts/pytz_1612179539967/work
+ratelim==0.1.6
+requests==2.25.1
+Rtree @ file:///Users/runner/miniforge3/conda-bld/rtree_1610147290075/work
+scikit-learn==0.22.1
+scipy==1.4.1
+Shapely @ file:///Users/runner/miniforge3/conda-bld/shapely_1611522866430/work
+six @ file:///home/conda/feedstock_root/build_artifacts/six_1590081179328/work
+tornado @ file:///Users/runner/miniforge3/conda-bld/tornado_1610094711612/work
+tqdm==4.58.0
+urllib3==1.26.3
