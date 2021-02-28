@@ -5,7 +5,7 @@ Created on Sun Feb 21 14:10:13 2021
 
 @author: siyuanzhang
 """
-import pycountry
+
 import pandas as pd
 import geopandas as gpd
 import geocoder
@@ -14,9 +14,9 @@ import mapclassify
 country = []
 import csv
 regex = '^[A-Za-z_][A-Za-z0-9_]*'
-data = pd.read_csv('filte_data.csv')
-
-data = data.groupby('country').sum()
+data = pd.read_csv('vaccination_all_tweets.csv')
+#row = data['user_location'].to_list()
+data = data.groupby('user_location').sum()
 
 
 
@@ -25,8 +25,14 @@ data = data.groupby('country').sum()
 
 world = gpd.read_file(r'country.shp')
 
-world.replace('Brazil','Brasil',inplace = True)
-world.replace('Italy','Italia',inplace = True)
+world.replace('United States of America','United States',inplace = True)
+
+world.replace('China','中国',inplace = True)
+world.replace('Japan','日本',inplace = True)
+world.replace('Taiwan','中国',inplace = True)
+
+
+
 
 
 
@@ -40,7 +46,6 @@ ax = merge.plot(column='agreg',
                 edgecolor = 'black',
                 linewidth =0.4
                 )
-
 
 
 
@@ -70,9 +75,24 @@ file = open('filted.csv','w+',newline='')
 with file:
     write = csv.writer(file)
     write.writerows(country)
-
 '''
 
-
-
-
+'''
+for i in range(len(row)):
+    try:
+            df = pd.read_csv('vaccination_all_tweets.csv')
+            g = geocoder.osm(row[i])
+        
+        
+            x = g.json['lat'], g.json['lng']
+            g = geocoder.osm(x, method='reverse')
+            print(g.json['country'])
+            print(i)
+            df.loc[i,'user_location'] = g.json['country']
+            df.to_csv('vaccination_all_tweets.csv',index =False)
+            
+    except:
+        df = pd.read_csv('vaccination_all_tweets.csv')  
+        df.loc[i,'user_location'] = row[i]
+        df.to_csv('vaccination_all_tweets.csv',index =False)
+  '''      
