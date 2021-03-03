@@ -157,8 +157,8 @@ def generateGif(dir_path="img", gif_save_path="1.gif"):
 
 
 if __name__=="__main__":
-    main(world_path=r"country.shp", vaccine_file_path="vaccination_all_tweets.csv", sentiment_score_file_path="tweet_sentiment_all_001.csv")
-    generateGif()
+    main(world_path=r"data/country.shp", vaccine_file_path="data/vaccination_all_tweets.csv", sentiment_score_file_path="data/tweet_sentiment_all_001.csv")
+    #generateGif()
 
 
 
