@@ -11,7 +11,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 import imageio
-
+import matplotlib
+import matplotlib.patches as mpatches
 def testMismatchNameBetweenWorldAndCountries(world):
     not_in_list = []
     ISO3_list = world.ISO3.to_list()
@@ -81,7 +82,7 @@ def replaceUserLocationWithISO3(df, world):
     
     print("You have found {}/{} data samples".format(len(df), N))
     return df
-def main(world_path=r"country.shp", vaccine_file_path="vaccination_all_tweets.csv", sentiment_score_file_path="tweet_sentiment_005.csv"):
+def main(world_path=r"country.shp", vaccine_file_path="vaccination_all_tweets.csv", sentiment_score_file_path="tweet_sentiment_001.csv"):
     world = readWorldFile(world_path)
     #testMismatchNameBetweenWorldAndCountries(world)
     df_total = pd.read_csv(vaccine_file_path)
@@ -114,7 +115,8 @@ def main(world_path=r"country.shp", vaccine_file_path="vaccination_all_tweets.cs
         df_padded = pd.concat([temp, df]).fillna(-1)
 
         merged_world = world.merge(df_padded, left_on="ISO3", right_on="ISO3")
-        plotWorldWithScores(merged_world)
+        ax = plotWorldWithScores(merged_world)
+        ax.set_title('Dates:' + date,fontdict = {'fontsize':10},pad=12)
         if not os.path.exists("img"):
             os.makedirs("img")
         plt.savefig(f"img/{i}.png")
@@ -125,8 +127,19 @@ def plotWorldWithScores(merged_world):
     MAX = max(merged_world.score)
     MIN = min(merged_world.score)
     step = (MAX-MIN)/ 4
-    merged_world.plot(column="score", cmap="OrRd", legend=True,  edgecolor="black", linewidth=0.5, scheme="UserDefined", classification_kwds={'bins': np.arange(MIN, MAX, step).tolist()})
+    ax = merged_world.plot(column="score", cmap= matplotlib.colors.LinearSegmentedColormap.from_list("", ['#F2C6C6','#ffaa00','#66b3ff','#33ffdd','#33ff33',]), legend=False,  edgecolor="black", linewidth=0.5,
+                      scheme="UserDefined", classification_kwds={'bins': np.arange(MIN, MAX, step).tolist()},
+                      )
+   
+    pop_a = mpatches.Patch(color='#F2C6C6')
+    pop_b = mpatches.Patch(color='#ffaa00')
+    pop_c = mpatches.Patch(color='#66b3ff')
+    pop_d = mpatches.Patch(color='#33ffdd')
+    pop_e = mpatches.Patch(color='#33ff33')
 
+    plt.legend(handles=[pop_a,pop_b,pop_c,pop_d,pop_e])
+    return ax
+    #ax.legend = (['#ff5555','#ffaa00','#66b3ff','#33ffdd','#33ff33'])
 def generateGif(dir_path="img", gif_save_path="1.gif"):
     files = os.listdir(dir_path)
     files = sorted(files)
@@ -134,13 +147,13 @@ def generateGif(dir_path="img", gif_save_path="1.gif"):
     imgs = []
     for path in path_list:
         imgs.append(plt.imread(path))
-    imageio.mimsave(gif_save_path, imgs)
+    imageio.mimsave(gif_save_path, imgs,duration = 0.5)
 
 
 
 
 if __name__=="__main__":
-    main(world_path=r"country.shp", vaccine_file_path="vaccination_all_tweets.csv", sentiment_score_file_path="tweet_sentiment_005.csv")
+    main(world_path=r"country.shp", vaccine_file_path="vaccination_all_tweets.csv", sentiment_score_file_path="tweet_sentiment_all_001.csv")
     generateGif()
 
 
