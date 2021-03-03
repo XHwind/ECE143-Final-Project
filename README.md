@@ -3,6 +3,12 @@ This is repository for ECE143 Group 7's Final Project.
 
 
 
+## Notebook for the test cases
+
+Our notebook for the functional/validation tests is in the file `./test.ipynb`.
+
+
+
 
 
 ## Spatial Temporal analysis
