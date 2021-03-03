@@ -116,7 +116,7 @@ def main(world_path=r"country.shp", vaccine_file_path="vaccination_all_tweets.cs
 
         merged_world = world.merge(df_padded, left_on="ISO3", right_on="ISO3")
         ax = plotWorldWithScores(merged_world)
-        ax.set_title('Dates:' + date,fontdict = {'fontsize':10},pad=12)
+        ax.set_title('Dates:' + date,fontdict = {'fontsize':16},pad=12)
         if not os.path.exists("img"):
             os.makedirs("img")
         plt.savefig(f"img/{i}.png")
@@ -126,24 +126,28 @@ def plotWorldWithScores(merged_world):
     # -1 means unknown countries, all the other values corresponds to the mean sentiment score for that country
     MAX = max(merged_world.score)
     MIN = min(merged_world.score)
-    step = (MAX-MIN)/ 4
-    ax = merged_world.plot(column="score", cmap= matplotlib.colors.LinearSegmentedColormap.from_list("", ['#F2C6C6','#ffaa00','#66b3ff','#33ffdd','#33ff33',]), legend=False,  edgecolor="black", linewidth=0.5,
+    step = (MAX-MIN)/ 5
+    ax = merged_world.plot(column="score", cmap= matplotlib.colors.LinearSegmentedColormap.from_list("", ['#F2C6C6','#ff5555', '#ffaa00','#66b3ff','#33ffdd','#33ff33',]), legend=False,  edgecolor="black", linewidth=0.5,
                       scheme="UserDefined", classification_kwds={'bins': np.arange(MIN, MAX, step).tolist()},
                       )
-   
     pop_a = mpatches.Patch(color='#F2C6C6')
-    pop_b = mpatches.Patch(color='#ffaa00')
-    pop_c = mpatches.Patch(color='#66b3ff')
-    pop_d = mpatches.Patch(color='#33ffdd')
-    pop_e = mpatches.Patch(color='#33ff33')
+    pop_b = mpatches.Patch(color='#ff5555')
+    pop_c = mpatches.Patch(color='#ffaa00')
+    pop_d = mpatches.Patch(color='#66b3ff')
+    pop_e = mpatches.Patch(color='#33ffdd')
+    pop_f = mpatches.Patch(color='#33ff33')
+    plt.axis('off')
 
-    plt.legend(handles=[pop_a,pop_b,pop_c,pop_d,pop_e])
+    plt.legend(handles=[pop_a,pop_b,pop_c,pop_d,pop_e, pop_f])
     return ax
     #ax.legend = (['#ff5555','#ffaa00','#66b3ff','#33ffdd','#33ff33'])
 def generateGif(dir_path="img", gif_save_path="1.gif"):
     files = os.listdir(dir_path)
-    files = sorted(files)
-    path_list = [os.path.join(dir_path, x) for x in files]
+    #files = sorted(files, key=lambda x: x.split(".")[0])
+    y = [(x, int(x.split(".")[0])) for x in files if len(x)>=1 and "png" in x]
+    files = sorted(y, key=lambda x: x[1])
+    files = [x[0] for x in files]
+    path_list = [os.path.join(dir_path, x) for x in files if "png" in x]
     imgs = []
     for path in path_list:
         imgs.append(plt.imread(path))
@@ -153,7 +157,7 @@ def generateGif(dir_path="img", gif_save_path="1.gif"):
 
 
 if __name__=="__main__":
-    main(world_path=r"country.shp", vaccine_file_path="vaccination_all_tweets.csv", sentiment_score_file_path="tweet_sentiment_all_001.csv")
+    #main(world_path=r"country.shp", vaccine_file_path="vaccination_all_tweets.csv", sentiment_score_file_path="tweet_sentiment_all_001.csv")
     generateGif()
 
 
