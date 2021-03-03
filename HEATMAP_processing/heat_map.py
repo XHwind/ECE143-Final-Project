@@ -138,7 +138,7 @@ def plotWorldWithScores(merged_world):
     pop_f = mpatches.Patch(color='#33ff33')
     plt.axis('off')
 
-    plt.legend(handles=[pop_a,pop_b,pop_c,pop_d,pop_e, pop_f])
+    plt.legend(handles=[pop_a,pop_b,pop_c,pop_d,pop_e, pop_f], bbox_to_anchor=(0, 1))
     return ax
     #ax.legend = (['#ff5555','#ffaa00','#66b3ff','#33ffdd','#33ff33'])
 def generateGif(dir_path="img", gif_save_path="1.gif"):
@@ -157,7 +157,7 @@ def generateGif(dir_path="img", gif_save_path="1.gif"):
 
 
 if __name__=="__main__":
-    #main(world_path=r"country.shp", vaccine_file_path="vaccination_all_tweets.csv", sentiment_score_file_path="tweet_sentiment_all_001.csv")
+    main(world_path=r"country.shp", vaccine_file_path="vaccination_all_tweets.csv", sentiment_score_file_path="tweet_sentiment_all_001.csv")
     generateGif()
 
 
