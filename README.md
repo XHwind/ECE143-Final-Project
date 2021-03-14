@@ -82,7 +82,7 @@ python plots_profession.py
 Please enter the Polarity_vs_Subjectivity_Analysis directory and run the notebook using Google Colab environment. The instructions for doing this are as follows: 
 
 1. Upload the notebook to your google drive
-2. Go into directory "Colab Notebooks"
+2. Go to drive.google.com and enter into directory "Colab Notebooks"
 3. Choose **New** --> **File upload**
 4. After uploading, click on the new file
 5. Select the option **Run on Colaboratory** at the top.
