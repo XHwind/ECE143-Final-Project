@@ -41,7 +41,7 @@ nltk.download([
 
 * Spatial temporal heat map: 
 
-  Please refer to the notebook `./heatmap.ipynb`.
+  Please refer to the notebook `heat_map.ipynb`.
 
 ## Sentiment Analysis
 
