@@ -43,6 +43,10 @@ nltk.download([
 
   Please refer to the notebook `heat_map.ipynb`.
 
+* Polarity_vs_Subjectivity_Analysis
+
+  Please refer to the notebook `./Polarity_vs_Subjectivity_Analysis/Tutorial1_sentiment_analysis.ipynb`. 
+
 ## Sentiment Analysis
 
 Navigate to sentiment_prediction
