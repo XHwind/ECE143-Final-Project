@@ -23,7 +23,9 @@ conda create -n test143 python=3.8
 pip install -r requirements.txt
 ```
 
+The **depandencies and third-party modules** are listed in the `requirements.txt` file. 
 
+The file structures are shown at the end of this repository. 
 
 ## Spatial Temporal analysis
 
@@ -40,4 +42,73 @@ python heat_map.py
 If you want to generate the gif, please utilize the `generateGif()` function. And you would get the `gif` as below:
 
 ![img](./HEATMAP_processing/1.gif)
+
+
+
+## File structures
+
+The file structures are shown below. Each folder contains the separate `.py` scripts for running the 
+
+For example, in the folder `HEATMAP_processing`, you can run the scripts for generating the Spatial Temporal analysis gif images as shown above. 
+
+```
+.
+├── Group7-Final-Presentation.pdf
+├── HEATMAP_processing
+│   ├── 1.gif
+│   ├── data
+│   │   ├── capital.dbf
+│   │   ├── capital.prj
+│   │   ├── capital.qpj
+│   │   ├── capital.shp
+│   │   ├── capital.shx
+│   │   ├── country.dbf
+│   │   ├── country.prj
+│   │   ├── country.qpj
+│   │   ├── country.shp
+│   │   ├── country.shx
+│   │   ├── gran_agg.csv
+│   │   ├── graticule.dbf
+│   │   ├── graticule.prj
+│   │   ├── graticule.qpj
+│   │   ├── graticule.shp
+│   │   ├── graticule.shx
+│   │   ├── tot_agg.csv
+│   │   ├── tweet_sentiment_005.csv
+│   │   ├── tweet_sentiment_all_001.csv
+│   │   ├── vaccination_all_tweets.csv
+│   │   └── vaccination_all_tweets_test.csv
+│   ├── heat_map.py
+│   ├── img
+│   └── requirements.txt
+├── Polarity_vs_Subjectivity_Analysis
+│   └── Tutorial1_sentiment_analysis.ipynb
+├── Profession_based_sentiment_analysis
+│   ├── Dataset_splits
+│   │   ├── healthcare_workers.csv
+│   │   ├── media_corporations.csv
+│   │   └── media_users.csv
+│   ├── Input_dataset
+│   │   └── vaccination_all_tweets.csv
+│   ├── login.csv
+│   └── profession_based_split.py
+├── README.md
+├── requirements.txt
+├── sentiment_prediction
+│   ├── aggregate_plots.py
+│   ├── csv_data_parser.py
+│   ├── dataset
+│   │   ├── healthcare_workers.csv
+│   │   ├── media_corporations.csv
+│   │   ├── media_users.csv
+│   │   ├── negative-words.txt
+│   │   ├── positive-words.txt
+│   │   └── vaccination_all_tweets.csv
+│   ├── plots_profession.py
+│   ├── tweet_analysis_by_profession.py
+│   └── tweet_sentiment_analysis.py
+└── test.ipynb
+```
+
+
 
