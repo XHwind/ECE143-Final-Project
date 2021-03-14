@@ -35,7 +35,16 @@ nltk.download([
 ... ])
 ```
 
+**The file structures are shown at the end of this repository.** 
+
+## Jupyter Notebook for images
+
+* Spatial temporal heat map: 
+
+  Please refer to the notebook `./heatmap.ipynb`.
+
 ## Sentiment Analysis
+
 Navigate to sentiment_prediction
 
 Create directories to save data by running
@@ -63,8 +72,6 @@ To generate occupation-wise sentiment bar-graph, run
 ```
 python plots_profession.py
 ```
-
-The file structures are shown at the end of this repository. 
 
 ## Spatial Temporal analysis
 
