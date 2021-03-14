@@ -17,7 +17,7 @@ conda create -n test143 python=3.8
 pip install -r requirements.txt
 ```
 
- **The depandencies and third-party modules are listed in the `requirements.txt` file.**
+ **The dependencies and third-party modules are listed in the `requirements.txt` file.**
 
 To dowload Nltk packages run this in Python shell:
 ```
@@ -79,7 +79,7 @@ python plots_profession.py
 
 ## Polarity vs Subjectivity Analysis of tweets
 
-**Disclaimer: A separate .py file is not being included for this part for the reason that installing the _Textblob_ package is very cumbersome and highly platform-dependent. So, to avoid all such problems, it is safe to run this on Google Colab**
+**Disclaimer: A separate .py file is not being included for this part for the reason that installation of the _Textblob_ package is very cumbersome and highly platform-dependent. So, to avoid all such problems, it is safe to run this on Google Colab**
 
 Please enter the Polarity_vs_Subjectivity_Analysis directory and run the notebook using Google Colab environment. The instructions for doing this are as follows: 
 
