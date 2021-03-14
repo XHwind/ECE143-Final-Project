@@ -8,6 +8,12 @@ This is repository for ECE143 Group 7's Final Project.
 Our notebook for the functional/validation tests is in the file `./test.ipynb`.
 
 
+
+## Slides for the presentation
+
+The `pdf` slides for the presentation is in the file `./Group7-Final-Presentation.pdf`.
+
+
 ## Setup the environment
 
 Please install the packages by 
