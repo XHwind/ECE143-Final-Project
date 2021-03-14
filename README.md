@@ -17,9 +17,8 @@ conda create -n test143 python=3.8
 pip install -r requirements.txt
 ```
 
+ **The depandencies and third-party modules are listed in the `requirements.txt` file.**
 
-The **depandencies and third-party modules** are listed in the `requirements.txt` file. 
-=======
 To dowload Nltk packages run this in Python shell:
 ```
 import nltk
@@ -64,8 +63,6 @@ To generate occupation-wise sentiment bar-graph, run
 ```
 python plots_profession.py
 ```
-
->>>>>>> refs/remotes/origin/main
 
 The file structures are shown at the end of this repository. 
 
