@@ -73,6 +73,17 @@ To generate occupation-wise sentiment bar-graph, run
 python plots_profession.py
 ```
 
+## Polarity vs Subjectivity Analysis of tweets
+
+Please enter the Polarity_vs_Subjectivity_Analysis directory and run the notebook using Google Colab environment. The instructions for doing this are as follows: 
+
+1. Upload the notebook to your google drive
+2. Go into directory "Colab Notebooks"
+3. Choose **New** --> **File upload**
+4. After uploading, click on the new file
+5. Select the option **Run on Colaboratory** at the top.
+
+
 ## Spatial Temporal analysis
 
 Please enter the `HEATMAP_processing` directory and change the path as instructed below. (If you utilize our default repository setting, you should be able to directly run the command.)
