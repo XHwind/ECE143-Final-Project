@@ -17,7 +17,7 @@ conda create -n test143 python=3.8
 pip install -r requirements.txt
 ```
 
-<<<<<<< HEAD
+
 The **depandencies and third-party modules** are listed in the `requirements.txt` file. 
 =======
 To dowload Nltk packages run this in Python shell:
