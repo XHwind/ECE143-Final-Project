@@ -79,6 +79,8 @@ python plots_profession.py
 
 ## Polarity vs Subjectivity Analysis of tweets
 
+**Disclaimer: A separate .py file is not being included for this part for the reason that installing the _Textblob_ package is very cumbersome and highly platform-dependent. So, to avoid all such problems, it is safe to run this on Google Colab**
+
 Please enter the Polarity_vs_Subjectivity_Analysis directory and run the notebook using Google Colab environment. The instructions for doing this are as follows: 
 
 1. Upload the notebook to your google drive
