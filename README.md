@@ -102,6 +102,60 @@ For example, in the folder `HEATMAP_processing`, you can run the scripts for gen
 ├── Group7-Final-Presentation.pdf
 ├── HEATMAP_processing
 │   ├── 1.gif
+│   ├── Untitled.ipynb
+│   ├── data
+│   │   ├── capital.dbf
+│   │   ├── capital.prj
+│   │   ├── capital.qpj
+│   │   ├── capital.shp
+│   │   ├── capital.shx
+│   │   ├── country.dbf
+│   │   ├── country.prj
+│   │   ├── country.qpj
+│   │   ├── country.shp
+│   │   ├── country.shx
+│   │   ├── gran_agg.csv
+│   │   ├── graticule.dbf
+│   │   ├── graticule.prj
+│   │   ├── graticule.qpj
+│   │   ├── graticule.shp
+│   │   ├── graticule.shx
+│   │   ├── tot_agg.csv
+│   │   ├── tweet_sentiment_005.csv
+│   │   ├── tweet_sentiment_all_001.csv
+│   │   ├── vaccination_all_tweets.csv
+│   │   └── vaccination_all_tweets_test.csv
+│   ├── heat_map.ipynb
+│   ├── heat_map.py
+│   └── requirements.txt
+├── Polarity_vs_Subjectivity_Analysis
+│   └── Tutorial1_sentiment_analysis.ipynb
+├── Profession_based_sentiment_analysis
+│   ├── Dataset_splits
+│   │   ├── healthcare_workers.csv
+│   │   ├── media_corporations.csv
+│   │   └── media_users.csv
+│   ├── profession_based_split.py
+│   └── vaccination_all_tweets.csv
+├── README.md
+├── requirements.txt
+├── sentiment_prediction
+│   ├── aggregate_plots.py
+│   ├── csv_data_parser.py
+│   ├── dataset
+│   │   ├── healthcare_workers.csv
+│   │   ├── media_corporations.csv
+│   │   ├── media_users.csv
+│   │   ├── negative-words.txt
+│   │   ├── positive-words.txt
+│   │   └── vaccination_all_tweets.csv
+│   ├── plots_profession.py
+│   ├── tweet_analysis_by_profession.py
+│   └── tweet_sentiment_analysis.py
+└── test.ipynb.
+├── Group7-Final-Presentation.pdf
+├── HEATMAP_processing
+│   ├── 1.gif
 │   ├── data
 │   │   ├── capital.dbf
 │   │   ├── capital.prj
