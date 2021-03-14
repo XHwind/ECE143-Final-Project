@@ -14,6 +14,11 @@ import imageio
 import matplotlib
 import matplotlib.patches as mpatches
 def testMismatchNameBetweenWorldAndCountries(world):
+    """
+    test mismatch name between world and countries
+    Args:
+        world: gpd frame
+    """
     not_in_list = []
     ISO3_list = world.ISO3.to_list()
     for c, country in enumerate(pycountry.countries):
@@ -25,10 +30,20 @@ def testMismatchNameBetweenWorldAndCountries(world):
 
 
 def readWorldFile(path):
+    """
+    Read world frame from path
+    Args:
+        path: path to the file
+    Return: 
+        return the gpd frame
+    """
     return gpd.read_file(path)
 def preprocessUserLocation(df):
     """
     Read csv dataframe, replace foreign language with english and remove the rows with nan
+    Args:
+        df: dataframe
+    Return: modified df
     """
     df.user_location = df.user_location.str.replace("中国","China", case=False)
     df.user_location = df.user_location.str.replace("ישראל","Israel", case=False)
@@ -53,6 +68,14 @@ def preprocessUserLocation(df):
     df.dropna(axis=0, how="any", inplace=True)
     return df
 def replaceUserLocationWithISO3(df, world):
+    """
+    Replace user location with ISO3 to make the location information consistant
+    Args:
+        df: dataframe
+        world: gpd frame
+    Return:
+        modifed dataframe
+    """
     
     removeList = []
     good_list = []
@@ -83,6 +106,9 @@ def replaceUserLocationWithISO3(df, world):
     print("You have found {}/{} data samples".format(len(df), N))
     return df
 def main(world_path=r"country.shp", vaccine_file_path="vaccination_all_tweets.csv", sentiment_score_file_path="tweet_sentiment_001.csv"):
+    """
+    Main function
+    """
     world = readWorldFile(world_path)
     #testMismatchNameBetweenWorldAndCountries(world)
     df_total = pd.read_csv(vaccine_file_path)
@@ -123,6 +149,11 @@ def main(world_path=r"country.shp", vaccine_file_path="vaccination_all_tweets.cs
     #df.to_csv('vaccination_all_tweets_test.csv',index =False)
 
 def plotWorldWithScores(merged_world):
+    """
+    Plot the world with scores
+    Args:
+        merged_world: merged gpd frame between data and world
+    """
     # -1 means unknown countries, all the other values corresponds to the mean sentiment score for that country
     MAX = max(merged_world.score)
     MIN = min(merged_world.score)
@@ -142,6 +173,12 @@ def plotWorldWithScores(merged_world):
     return ax
     #ax.legend = (['#ff5555','#ffaa00','#66b3ff','#33ffdd','#33ff33'])
 def generateGif(dir_path="img", gif_save_path="1.gif"):
+    """
+    Generate the Gif
+    Args:
+        dir_path: path for the saved images
+        gif_save_path: path to save gif 
+    """
     files = os.listdir(dir_path)
     #files = sorted(files, key=lambda x: x.split(".")[0])
     y = [(x, int(x.split(".")[0])) for x in files if len(x)>=1 and "png" in x]
@@ -158,7 +195,7 @@ def generateGif(dir_path="img", gif_save_path="1.gif"):
 
 if __name__=="__main__":
     main(world_path=r"data/country.shp", vaccine_file_path="data/vaccination_all_tweets.csv", sentiment_score_file_path="data/tweet_sentiment_all_001.csv")
-    #generateGif()
+    generateGif()
 
 
 

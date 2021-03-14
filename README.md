@@ -8,6 +8,14 @@ This is repository for ECE143 Group 7's Final Project.
 Our notebook for the functional/validation tests is in the file `./test.ipynb`.
 
 
+## Setup the environment
+
+Please install the packages by 
+
+```bash
+conda create -n test143 python=3.8
+pip install -r requirements.txt
+```
 
 
 
